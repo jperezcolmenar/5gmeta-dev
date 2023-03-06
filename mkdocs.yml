@@ -1,0 +1,10 @@
+site_name: 5GMETA
+nav:
+    - Home: index.md
+    - Message Data Broker: message-databroker.md
+    - Data Producers (ActiveMQ): activemq-example.md
+    - Stream Data Gateway: stream-datagateway.md
+    - Stream Data Gateway Examples: stream-example.md
+    - Avro Events Producer Example: stream-avro-producer.md
+    - About: about.md
+theme: readthedocs
