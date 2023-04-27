@@ -7,5 +7,5 @@ nav:
     - Stream Data Gateway Examples: stream-example.md
     - Avro Events Producer Example: stream-avro-producer.md
     - About: about.md
-    - Consuming guide: consuming_guide.md
+    - Consuming guide: consuming-guide.md
 theme: readthedocs
