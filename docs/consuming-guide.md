@@ -27,7 +27,6 @@ This guide is oriented to be executed in an Ubuntu 20.04 environment.
 ## Extra packages to be installed
 First of all, you will need to install some dependencies (apt-get):
 
-* python3-qpid-proton
 * python3-avro
 * python3-confluent-kafka
 * gstreamer1.0-plugins-bad (only if you are going to consume video)
@@ -38,6 +37,7 @@ Also install with pip3:
 
 * kafka-python
 * numpy
+* python-qpid-proton
 
 ## Platform-client helper application
 
