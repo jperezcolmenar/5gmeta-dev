@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Consuming guide - 5GMETA</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Consuming guide";
+        var mkdocs_page_input_path = "consuming-guide.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> 5GMETA
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../message-databroker/">Message Data Broker</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../activemq-example/">Data Producers (ActiveMQ)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stream-datagateway/">Stream Data Gateway</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stream-example/">Stream Data Gateway Examples</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stream-avro-producer/">Avro Events Producer Example</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Consuming guide</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#registering-into-the-application">Registering into the application</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#software-requirements">Software requirements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extra-packages-to-be-installed">Extra packages to be installed</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#platform-client-helper-application">Platform-client helper application</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#client-usage">Client usage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#consumer-examples">Consumer examples</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#cits-consumer">CITS consumer</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../datasets/">Dataset guide</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">5GMETA</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Consuming guide</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>5GMETA platform is an IoT oriented platform that produces data from vehicles to be consumed by third party applications in order to get data from several types:</p>
+<ul>
+<li>CITS<ul>
+<li>json like messages with data extracted from the vehicle (ex: GPS position, etc)</li>
+<li><a href="https://github.com/5gmetadmin/5gmeta-dev/tree/main/tools/cits-example.json">Example</a></li>
+</ul>
+</li>
+<li>images<ul>
+<li>jpg</li>
+</ul>
+</li>
+<li>Video streaming</li>
+</ul>
+<h1 id="guide-to-consuming-data">Guide to consuming data</h1>
+<h2 id="registering-into-the-application">Registering into the application</h2>
+<p>First step to start using 5GMETA platform will be registering on it.</p>
+<p>Please go to <a href="https://5gmeta-platform.eu/identity/realms/5gmeta/login-actions/registration?client_id=apisix&amp;tab_id=gXKk2YPUybg">Registration web page</a> and fill the form with the data.</p>
+<p>Once you have registered you will be able to access the platform and start consuming data. Next you will be guided with some instructions to get that purpouse.</p>
+<h2 id="software-requirements">Software requirements</h2>
+<p>This guide is oriented to be executed in an Ubuntu 20.04 environment.</p>
+<h2 id="extra-packages-to-be-installed">Extra packages to be installed</h2>
+<p>First of all, you will need to install some dependencies (apt-get):</p>
+<ul>
+<li>python3-avro</li>
+<li>python3-confluent-kafka</li>
+<li>gstreamer1.0-plugins-bad (only if you are going to consume video)</li>
+<li>gstreamer1.0-libav (only if you are going to consume video)</li>
+<li>python3-gst-1.0 (only if you are going to consume video)</li>
+</ul>
+<p>Also install with pip3:</p>
+<ul>
+<li>kafka-python</li>
+<li>numpy</li>
+<li>python-qpid-proton</li>
+</ul>
+<h2 id="platform-client-helper-application">Platform-client helper application</h2>
+<p>There is a guided applicaction that will help you to get the apropriate parameters from 5GMETA platform to get the data you need.
+You can execute it by downloading all content from folder: </p>
+<ul>
+<li><a href="https://github.com/5gmetadmin/5gmeta-dev/tree/main/utils/platform-client/">Platform cliente helper application</a></li>
+</ul>
+<p>Once you have donwload that software you can run it by executing:</p>
+<pre><code>$ python3 client.py
+</code></pre>
+<p>in your command line.</p>
+<h3 id="client-usage">Client usage</h3>
+<p>Once you have executed the previous command you will be prompted for:
+* 5GMETA username
+* 5GMETA password</p>
+<p><img alt="Client prompt for username and password" src="../images/client_prompt_password.png" /></p>
+<p>After entering your username/password, client will ask you if you want to:
+* Consume data from 5GMETA platform
+* Produce an event in a vehicle connected to 5GMETA platform</p>
+<p><img alt="" src="../images/client_consume_produce.png" /></p>
+<p>In our case we have decided to consume data, so we push c. </p>
+<p>Inmediately client will show which <a href="#tile">tile</a> have data.</p>
+<p><img alt="" src="../images/client_available_tiles_with_data.png" /></p>
+<p>And will ask you to select one of them to consume data from.</p>
+<p>You can stop selecting tiles by pushing q in your keyboard.</p>
+<p>After selecting tiles client will show which datatype is available in the tiles you have selected.</p>
+<p><img alt="" src="../images/client_datatype_in_tiles.png" /></p>
+<p>And will ask you to select which datatype do you want to consume.</p>
+<p>Once selected you will be prompted with the instancetype you can use in the MEC that is managin data from that tile</p>
+<p><img alt="" src="../images/client_instance_type.png" /></p>
+<p>and will be asked to choose one.</p>
+<p>Once selected you will be prompted with the parameters from 5GMETA platform you have to use in consumer examples</p>
+<p><img alt="" src="../images/client_output_parameters.png" /></p>
+<p>Please notice that the parameters showed in that ouput <strong>ARE VALID ONLY IF YOU KEEP client.py RUNNING</strong>, once you stop it by pressing <strong>q</strong> those parameters could not be valid for your consumer application.</p>
+<p><strong>PLEASE DON'T STOP client.py APPLICATION BY PUSHING CTRL-C</strong></p>
+<h2 id="consumer-examples">Consumer examples</h2>
+<p>5GMETA platform offers some examples to comsume those data.</p>
+<ul>
+<li><a href="https://github.com/5gmetadmin/5gmeta-dev/tree/main/examples/stream-data-gateway/consumer/cits/cits-consumer.py">CITS command line consumer</a></li>
+<li><a href="https://github.com/5gmetadmin/5gmeta-dev/tree/main/examples/stream-data-gateway/consumer/image/image-consumer.py">image command line consumer</a></li>
+<li><a href="https://github.com/5gmetadmin/5gmeta-dev/tree/main/examples/stream-data-gateway/consumer/video/video-consumer.py">video command line consumer</a></li>
+</ul>
+<p>Those consumer clients will ask you for the parameters obtained as output in the <a href="#client-usage">Client usage</a> section.</p>
+<h3 id="cits-consumer">CITS consumer</h3>
+<p>This client is a Kafka client that will consume CITS data from 5GMETA platform and will print on the command line output. It takes as input parameters:</p>
+<ul>
+<li>Kafka topic</li>
+<li>Kafka broker address</li>
+<li>Kafka bootstrap port</li>
+<li>Kafka schema registry port</li>
+</ul>
+<h1 id="glossary">Glossary</h1>
+<h2 id="tile">Tile</h2>
+<p>A tile is a square area in the Earth surface defined to define some surface</p>
+<p>*<a href="https://ecn.t0.tiles.virtualearth.net/tiles/r03133312320110220?g=914&amp;mkt=en-us&amp;lbl=l1&amp;stl=h&amp;shading=hill&amp;n=z">Tile example location for tile 03133312320110220</a></p>
+<h2 id="datatype">Datatype</h2>
+<h2 id="instancetype">Instancetype</h2>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../about/" class="btn btn-neutral float-left" title="About"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../datasets/" class="btn btn-neutral float-right" title="Dataset guide">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../about/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../datasets/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

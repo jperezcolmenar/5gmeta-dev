@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Data Producers (ActiveMQ) - 5GMETA</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Data Producers (ActiveMQ)";
+        var mkdocs_page_input_path = "activemq-example.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> 5GMETA
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../message-databroker/">Message Data Broker</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Data Producers (ActiveMQ)</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#description">Description</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#required-packages">Required packages</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#generic-producer-structure">Generic producer structure</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#steps-to-run-examples">Steps to run examples</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pseudo-movement-example">Pseudo movement example</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-resources">Other resources</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stream-datagateway/">Stream Data Gateway</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stream-example/">Stream Data Gateway Examples</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stream-avro-producer/">Avro Events Producer Example</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../consuming-guide/">Consuming guide</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../datasets/">Dataset guide</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">5GMETA</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Data Producers (ActiveMQ)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="produce-and-consumer-examples">Produce and Consumer Examples</h1>
+<h2 id="description">Description</h2>
+<p>As discussed in the previous section,  <a href="https://github.com/5gmetadmin/message-data-broker/tree/main/examples/activemq_clients"><strong><em>/activemq_clients</em></strong></a> provides examples how to produce (cits/image) data from a Sensor&amp;Device to the MEC using python AMQP <a href="https://qpid.apache.org/proton/index.html">Qpid Proton</a> reactor API with ActiveMQ. </p>
+<p>In this section, we will discuss the examples in further detail.</p>
+<h2 id="required-packages">Required packages</h2>
+<ul>
+<li>Linux distribution</li>
+<li>Python version 3.5+</li>
+<li>You have successfully installed <a href="https://pypi.python.org/pypi/python-qpid-proton">python-qpid-proton</a> - including any of its <a href="https://github.com/apache/qpid-proton/blob/master/INSTALL.md">dependencies</a></li>
+</ul>
+<p>Refering the examples presented, following are some essential parameters while producing data on the 5GMETA platform:</p>
+<ul>
+<li><strong><em>source_id</em></strong>: a Unique Identifier to distinguish the source of generated data.</li>
+<li><strong><em>tile</em></strong>: Tile of the source from where the data is being generated in form of QuadKey code. e.g. 1230123012301230 (must be 18 chars in [0-3])</li>
+<li><strong><em>datatype</em></strong>: should be one of the allowed datatype [cits, video, image]</li>
+<li><strong><em>sub_datatype</em></strong>: depends upon on the datatype e.g. cam, denm, mappem</li>
+</ul>
+<h2 id="generic-producer-structure">Generic producer structure</h2>
+<p>A typical producer will contain the following fields, as it can be seen in the <a href="https://github.com/5gmetadmin/message-data-broker/blob/main/examples/activemq_clients">examples</a>:</p>
+<ul>
+<li>
+<p><strong><em>Discovery Registration API</em></strong> : This API helps you connect your S&amp;Ds and push data to the MEC within a specified tile.</p>
+</li>
+<li>
+<p>Getting tile of the source from its current GPS position: </p>
+</li>
+</ul>
+<p><code>tileTmp = Tile.for_latitude_longitude(latitude=latitude, longitude=longitude, zoom=18)</code></p>
+<ul>
+<li>Getting the <strong>message-broker access</strong> from the <strong>MEC</strong> within the <strong>previous tile</strong>:</li>
+</ul>
+<pre><code>service=&quot;message-broker&quot;
+
+messageBroker_ip, messageBroker_port = discovery_registration.discover_sb_service(tile,service)
+</code></pre>
+<ul>
+<li>Getting AMQP <strong>Topic</strong> and <strong>dataFlowId</strong> to <strong>push</strong> data into the <strong>Message Broker</strong>:</li>
+</ul>
+<pre><code>dataflowId, topic = discovery_registration.register(dataflowmetadata,tile)
+
+opts.address=&quot;amqp://&quot;+username+&quot;:&quot;+password+&quot;@&quot;+messageBroker_ip+&quot;:&quot;+str(messageBroker_port)+&quot;:/topic://&quot;+topic
+
+jargs = json.dumps(args)
+</code></pre>
+<h2 id="usage">Usage</h2>
+<p>Let's take an example of CITS message producer as shown here in <a href="https://github.com/5gmetadmin/message-data-broker/blob/main/examples/activemq_clients/cits_sender_python/sender.py">sender.py</a> for reference.</p>
+<ul>
+<li>Pass the latitude and longitude GPS position of your sensor device as shown here in :</li>
+</ul>
+<pre><code># Geoposition - Next steps: from GPS device.
+latitude = 43.3128
+longitude = -1.9750
+
+</code></pre>
+<ul>
+<li>Replace with your <strong><em>metadata</em></strong> in this section shown below. </li>
+</ul>
+<pre><code>dataflowmetadata = {
+    &quot;dataTypeInfo&quot;: {
+        &quot;dataType&quot;: &quot;cits&quot;,
+        &quot;dataSubType&quot;: &quot;json&quot;
+    },
+    &quot;dataInfo&quot;: {
+        &quot;dataFormat&quot;: &quot;asn1_jer&quot;,
+        &quot;dataSampleRate&quot;: 0.0,
+        &quot;dataflowDirection&quot;: &quot;upload&quot;,
+        &quot;extraAttributes&quot;: None,
+    },
+    &quot;licenseInfo&quot;: {
+        &quot;licenseGeolimit&quot;: &quot;europe&quot;,
+        &quot;licenseType&quot;: &quot;profit&quot;
+    },
+    &quot;dataSourceInfo&quot;: {
+        &quot;sourceTimezone&quot;: 2,
+        &quot;sourceStratumLevel&quot;: 3,
+        &quot;sourceId&quot;: 1,
+        &quot;sourceType&quot;: &quot;vehicle&quot;,
+        &quot;sourceLocationInfo&quot;: {
+            &quot;locationQuadkey&quot;: tile,
+            &quot;locationCountry&quot;: &quot;ESP&quot;,
+            &quot;locationLatitude&quot;: latitude,
+            &quot;locationLongitude&quot;: longitude
+        }
+    }   
+}
+</code></pre>
+<ul>
+<li>Use the sample <a href="https://github.com/5gmetadmin/message-data-broker/blob/main/examples/activemq_clients/cits_sender_python/content.py">content.py</a> to generate your messages. Here as you can see the <strong>*msgbody</strong> contains the CITS message.  </li>
+</ul>
+<pre><code>def messages_generator(num, tile, msgbody='body_cits_message'):
+    messages.clear()
+
+    #print(&quot;Sender prepare the messages... &quot;)
+    for i in range(num):        
+        props = {
+                    &quot;dataType&quot;: &quot;cits&quot;,
+                    &quot;dataSubType&quot;: &quot;cam&quot;,
+                    &quot;dataFormat&quot;:&quot;asn1_jer&quot;,
+                    &quot;sourceId&quot;: 1,
+                    &quot;locationQuadkey&quot;: tile+str(i%4),
+                    &quot;body_size&quot;: str(sys.getsizeof(msgbody))
+                    }
+
+        messages.append( Message(body=msgbody, properties=props) )
+
+</code></pre>
+<h3 id="steps-to-run-examples">Steps to run examples</h3>
+<ul>
+<li>
+<p>Modify <a href="https://github.com/5gmetadmin/message-data-broker/blob/main/examples/activemq_clients/cits_sender_python/address.py"><strong>address.py</strong></a> to put the <strong><em>appropriate ip</em></strong>, <strong><em>port</em></strong> and <strong><em>topic</em></strong> given by <strong>your message broker</strong> or run with options:</p>
+</li>
+<li>
+<p>Additional arguments as highlighted below could be parsed to the <a href="https://github.com/5gmetadmin/message-data-broker/blob/main/examples/activemq_clients/cits_sender_python/sender.py">sender.py</a> :
+    ```</p>
+<ul>
+<li>h, --help            show this help message and exit</li>
+<li>a ADDRESS, --address=ADDRESS
+    = address to which messages are sent (default amqp://5gmeta-user:5gmeta-password@192.168.15.34:5673/topic://cits)</li>
+<li>m MESSAGES, --messages=MESSAGES
+    = number of messages to send (default 100)</li>
+<li>t TIMEINTERVAL, --timeinterval=TIMEINTERVAL
+    = messages are sent continuosly every time interval seconds (0: send once) (default 10) 
+```</li>
+</ul>
+</li>
+<li>
+<p>In one terminal window run wither of the sender scripts <strong>depending upon whether you are running your S&amp;D connected to an database or not</strong>. You can add additional arguments as shown before:
+    <code>python3 sender.py</code> or <code>python3 sender_with_sd_database_support.py</code></p>
+<p>Example output can be seen below:</p>
+<p><img alt="Sender example" src="../images/sender_data_broker.png" /></p>
+</li>
+<li>
+<p>If you want to do some debugging and check if your messages are being sent run in another terminal to receive messages (you have to modify <strong>address.py</strong> in order to put the <strong><em>appropriate ip</em></strong>, <strong><em>port</em></strong> and <strong><em>topic</em></strong> given by <strong>your message broker</strong>) :</p>
+<p>Run <code>python3 receiver.py</code> to see the received messages on the subscribed AMQP topic.</p>
+<p><img alt="Receiver example" src="../images/receiver_data_broker.png" /></p>
+</li>
+<li>
+<p>Use the ActiveMQ admin web page to check Messages Enqueued / Dequeued counts match. </p>
+</li>
+<li>
+<p>You can control which AMQP server the examples try to connect to and the messages they send by changing the values in <strong>config.py</strong></p>
+</li>
+<li>
+<p><strong><em>NB:</em></strong> You have to take into account that any modification made on dataflowmetadata must be applied too into the content.py file in order to generate the appropriate content.</p>
+</li>
+</ul>
+<h2 id="pseudo-movement-example">Pseudo movement example</h2>
+<p>This example demonstrates data being produced by a moving sensor device.</p>
+<ul>
+<li>
+<p>Added some movement around a fixed GPS position in order to simulate movement.</p>
+<ul>
+<li>
+<p>Example:</p>
+</li>
+<li>
+<p><a href="cits_send_moving_location.py">cits_send_moving_location.py</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>This way we can move around a MEC that covers tiles:</p>
+<ul>
+<li>031333123201033</li>
+<li>031333123201211</li>
+</ul>
+<p>and a <strong><em>secondary one</em></strong> that covers tiles:</p>
+<ul>
+<li>031333123201212</li>
+<li>031333123201213</li>
+<li>031333123201223</li>
+<li>031333123202223</li>
+</ul>
+<h2 id="other-resources">Other resources</h2>
+<p><strong><em>The initial example for this client is at the link: https://github.com/apache/activemq/tree/main/assembly/src/release/examples/amqp/python</em></strong></p>
+<pre><code>- *https://qpid.apache.org/releases/qpid-proton-0.36.0/proton/python/docs/tutorial.html*
+- *https://access.redhat.com/documentation/en-us/red_hat_amq/6.3/html/client_connectivity_guide/amqppython*
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../message-databroker/" class="btn btn-neutral float-left" title="Message Data Broker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../stream-datagateway/" class="btn btn-neutral float-right" title="Stream Data Gateway">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../message-databroker/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../stream-datagateway/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

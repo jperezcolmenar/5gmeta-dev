@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Stream Data Gateway - 5GMETA</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Stream Data Gateway";
+        var mkdocs_page_input_path = "stream-datagateway.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> 5GMETA
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../message-databroker/">Message Data Broker</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../activemq-example/">Data Producers (ActiveMQ)</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Stream Data Gateway</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#description">Description</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#table-of-contents">Table of Contents</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#development-version-for-stream-data-gateway">Development version for Stream Data Gateway</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#production-version">Production version</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5gmeta-platform-client">5GMETA Platform client</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#consumer">Consumer:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#producer">Producer:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#other">Other:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stream-example/">Stream Data Gateway Examples</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stream-avro-producer/">Avro Events Producer Example</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../consuming-guide/">Consuming guide</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../datasets/">Dataset guide</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">5GMETA</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Stream Data Gateway</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="stream-data-gateway">Stream Data Gateway</h1>
+<h2 id="description">Description</h2>
+<p>Stream Data Gateway is the module used in 5GMETA Cloud platform to stream the messages from the MECs to the Third Parties.
+It is implemented using Kafka ecosystem technologies. This repository can be downloaded from <a href="https://github.com/5gmetadmin/stream-data-gateway/tree/main">here</a>.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<p>The Stream Data Gatawey module contains:</p>
+<ul>
+<li>
+<p>Kafka Broker docker-compose and helm chart (<a href="https://github.com/5gmetadmin/stream-data-gateway/tree/main/src">link</a>). </p>
+</li>
+<li>
+<p>Connectors configuration to retrive the messages from ActiveMQ (src/)</p>
+</li>
+<li>
+<p><strong>Examples</strong> of different Kafka Consumers (<a href="https://github.com/5gmetadmin/stream-data-gateway/tree/main/examples/consumer">link</a>)</p>
+</li>
+</ul>
+<h3 id="development-version-for-stream-data-gateway">Development version for Stream Data Gateway</h3>
+<ul>
+<li>
+<p>Refer this <a href="https://github.com/5gmetadmin/stream-data-gateway/blob/main/src/README.md">README</a> for further API details. The dev version can be found <a href="https://github.com/5gmetadmin/stream-data-gateway/tree/main/src/dev-version">here</a>. There is Kafka instance to be deployed locally.</p>
+</li>
+<li>
+<p>Inside <a href="https://github.com/5gmetadmin/stream-data-gateway/tree/main/src/dev-version/connectors"><strong><em>src/dev-version/connectors</em></strong></a> there is CLI to create connectors between AMQP (MEC) and Kafka (Cloud) to push data into Kafka infrastructure.</p>
+</li>
+</ul>
+<h3 id="production-version">Production version</h3>
+<p>Contains all neccessary informations to deploy Kafka into an AWS infrastructure (<a href="https://github.com/5gmetadmin/stream-data-gateway/tree/main/src/prod-version">link</a>).</p>
+<h3 id="5gmeta-platform-client">5GMETA Platform client</h3>
+<p>This is a third party python client for making requests to 5GMETA Platform.
+Clone the contents of <a href="https://github.com/5gmetadmin/stream-data-gateway/tree/main/utils/platform-client">platform-client</a>.</p>
+<h4 id="prerequisites">Prerequisites</h4>
+<ul>
+<li>Python3</li>
+<li>Registered user in the platform. To register use: <a href="5gmeta-platform.eu/identity/realms/5gmeta/account/">5GMETA User Registration</a></li>
+</ul>
+<h3 id="examples">Examples</h3>
+<p>In the <a href="https://github.com/5gmetadmin/stream-data-gateway/tree/main/examples"><strong><em>/examples</em></strong></a> folder you can find different sample codes for different Kafka producers and consumers as follows:</p>
+<h4 id="consumer">Consumer:</h4>
+<ul>
+<li>Kafka Consumers: working with AVRO (serialization and deserialization).</li>
+<li><strong><em>/consumer/cits/cits-consumer.py</em></strong>: a sample python Kafka consumer to receive CITS messages.</li>
+<li><strong><em>/consumer/image/image-consumer.py</em></strong>: a sample python Kafka consumer to receive images.</li>
+<li><strong><em>/consumer/video/video-consumer.py</em></strong>: a sample python Kafka consumer to receive video streams.</li>
+</ul>
+<h4 id="producer">Producer:</h4>
+<ul>
+<li>A Kafka producer (<strong><em>avro_producer_events.py</em></strong>) as example for the Third Parties message producer.</li>
+</ul>
+<h4 id="other">Other:</h4>
+<ul>
+<li>An interactive Avro CLI client to play with Kafka with AVRO ser-deser.</li>
+<li>Other example of producers</li>
+<li>Kafka Event message sender</li>
+</ul>
+<h3 id="installation">Installation</h3>
+<p>Installation requirements can be found on producer/consumer folders respectively.
+- Clone the repository using <code>git clone https://github.com/5gmetadmin/stream-data-gateway.git</code></p>
+<ul>
+<li>Navigate to <strong><em>/examples</em></strong> folder to install dependencies using:</li>
+</ul>
+<pre><code>  pip install -r examples/requirements.txt
+
+</code></pre>
+<p>Kafka producer/consumer examples are described in further detail in the following section. </p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../activemq-example/" class="btn btn-neutral float-left" title="Data Producers (ActiveMQ)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../stream-example/" class="btn btn-neutral float-right" title="Stream Data Gateway Examples">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../activemq-example/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../stream-example/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

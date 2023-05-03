@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Stream Data Gateway Examples - 5GMETA</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Stream Data Gateway Examples";
+        var mkdocs_page_input_path = "stream-example.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> 5GMETA
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../message-databroker/">Message Data Broker</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../activemq-example/">Data Producers (ActiveMQ)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stream-datagateway/">Stream Data Gateway</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Stream Data Gateway Examples</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#required-packages-to-be-installed">Required packages to be installed</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#more-dependencies-apt-get">More dependencies (apt-get):</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#consumer-instructions">Consumer instructions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#more-examples">More examples</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stream-avro-producer/">Avro Events Producer Example</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../consuming-guide/">Consuming guide</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../datasets/">Dataset guide</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">5GMETA</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Stream Data Gateway Examples</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="consumer-and-event-producer-examples">Consumer and Event Producer Examples</h1>
+<p>In this section, ww walkthrough the Kafka consumer examples. Three sample consumer examples are provided within the <a href="https://github.com/5gmetadmin/stream-data-gateway/tree/main/examples/consumer">repo</a> for cits, video and image datatypes respectively.</p>
+<h2 id="required-packages-to-be-installed">Required packages to be installed</h2>
+<p><code>pip3 install -r examples/requirements.txt</code></p>
+<h3 id="more-dependencies-apt-get">More dependencies (apt-get):</h3>
+<ul>
+<li>python3-qpid-proton</li>
+<li>python3-avro</li>
+<li>python3-confluent-kafka</li>
+<li>gstreamer1.0-plugins-bad</li>
+<li>gstreamer1.0-libav</li>
+<li>python3-gst-1.0</li>
+</ul>
+<p>Also install with pip3:</p>
+<ul>
+<li>kafka-python</li>
+<li>numpy</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<h3 id="consumer-instructions"><em>Consumer instructions</em></h3>
+<ul>
+<li>
+<p>Use <a href="https://github.com/5gmetadmin/stream-data-gateway/tree/main/utils/platform-client">platform-client</a> to receive appropriate topics and IPs and ports to be used.</p>
+</li>
+<li>
+<p>Select the suitable consumer as per the produced data and use as follows: </p>
+</li>
+</ul>
+<pre><code>python3 cits-consumer.py topic platformaddress bootstrap_port registry_port
+
+</code></pre>
+<p>or</p>
+<pre><code>python3 video-consumer.py platformaddress bootstrap_port topic dataflow_id
+
+</code></pre>
+<h4 id="more-examples">More examples</h4>
+<p>There are other such examples that are complete and don't need to use external util to get topic and ip/port to access the system.</p>
+<ul>
+<li><a href="https://github.com/5gmetadmin/stream-data-gateway/blob/main/examples/consumer/cits/cits-kafka-consumer.py">cits/cits-kafka-consumer.py</a></li>
+<li><a href="https://github.com/5gmetadmin/stream-data-gateway/blob/main/examples/consumer/image/image-kafka-consumer.py">image/image-kafka-consumer.py</a></li>
+<li>Avro Producer: <a href="https://github.com/5gmetadmin/stream-data-gateway/blob/main/examples/producer/avro_producer_events.py">producer/avro_producer_events.py</a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../stream-datagateway/" class="btn btn-neutral float-left" title="Stream Data Gateway"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../stream-avro-producer/" class="btn btn-neutral float-right" title="Avro Events Producer Example">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../stream-datagateway/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../stream-avro-producer/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
