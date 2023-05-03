@@ -8,4 +8,5 @@ nav:
     - Avro Events Producer Example: stream-avro-producer.md
     - About: about.md
     - Consuming guide: consuming-guide.md
+    - Dataset guide: datasets.md
 theme: readthedocs
