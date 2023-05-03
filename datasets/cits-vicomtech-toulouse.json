@@ -2,16 +2,16 @@
    "header":{
       "protocolVersion":2,
       "messageID":2,
-      "stationID":440
+      "stationID":8955
    },
    "cam":{
-      "generationDeltaTime":51316,
+      "generationDeltaTime":60969,
       "camParameters":{
          "basicContainer":{
             "stationType":5,
             "referencePosition":{
-               "latitude":432978987,
-               "longitude":-19552504,
+               "latitude":436651669,
+               "longitude":13498243,
                "positionConfidenceEllipse":{
                   "semiMajorConfidence":4095,
                   "semiMinorConfidence":4095,
@@ -26,11 +26,11 @@
          "highFrequencyContainer":{
             "basicVehicleContainerHighFrequency":{
                "heading":{
-                  "headingValue":1360,
+                  "headingValue":275,
                   "headingConfidence":127
                },
                "speed":{
-                  "speedValue":2512,
+                  "speedValue":866,
                   "speedConfidence":127
                },
                "driveDirection":"unavailable",
@@ -40,7 +40,7 @@
                },
                "vehicleWidth":20,
                "longitudinalAcceleration":{
-                  "longitudinalAccelerationValue":0,
+                  "longitudinalAccelerationValue":127,
                   "longitudinalAccelerationConfidence":102
                },
                "curvature":{
