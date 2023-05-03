@@ -2,6 +2,8 @@
 
 |  5GMETA DATA TYPE       |DESCRIPTION                          |TILE                         |SAMPLE                         |
 |----------------|-------------------------------|-----------------------------|-----------------------------|
-| C-ITS |`'Isn't this fun?'`            |'Isn't this fun?'            | |
-|image          |`"Isn't this fun?"`            |"Isn't this fun?"            | |
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash| |
+| C-ITS | Position, heading, speed and acceleration from vehicles  in Donostia (Spain)    |031333123201            | |
+| C-ITS | Position, heading, speed and acceleration from vehicles  in Toulouse (France)    |120222021            | |
+|image          |jpg from   Donostia (Spain)          |031333123201            | |
+|image          |jpg from   Toulouse (France)          |120222021            | |
+
