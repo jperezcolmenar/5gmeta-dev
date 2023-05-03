@@ -126,9 +126,13 @@ if __name__ == "__main__":
                                 print(f"There is no '{instance_type}' instance type in tile {tile}")
                         data = '{"username": "' + username + '", "datatype": "' + datatype + '", "instance_type": "' + instance_type + '"}'
                         instance = cloudinstance.request_instance(auth_header, mec_id, data)
-                        instance_id = instance['instance_id']
-                        instance_ids[mec_id].append(instance_id)
-                        print(f"\nSelected instance type for '{datatype}' pipeline: {instance_type}\n")
+                        try:
+                            instance_id = instance['instance_id']
+                            instance_ids[mec_id].append(instance_id)
+                            print(f"\nSelected instance type for '{datatype}' pipeline: {instance_type}\n")
+                        except:
+                            print(instance)
+                            sys.exit("Please try again with an instancetype with lower requirements")
                     else:
                         instance_type = "small"
 
