@@ -5,9 +5,11 @@ url = "https://5gmeta-platform.eu/dataflow-api"
 
 def get_datatype_from_tile(auth_header, tile):
     try:
-        datatypes = requests.get(url + "/datatypes/" + tile, headers=auth_header).text
-        
-        return datatypes
+        datatypes = requests.get(url + "/datatypes/" + tile, headers=auth_header)
+        if datatypes.status_code == 500:
+            sys.exit("Error getting datatypes. Try again.")
+        else:
+            return datatypes.text
     except Exception as err:
 #        print(f"{err}")
         sys.exit("Error getting datatypes. Try again.")
