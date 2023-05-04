@@ -18,7 +18,7 @@ First step to start using 5GMETA platform will be registering on it.
 Please go to [Registration web page](https://5gmeta-platform.eu/identity/realms/5gmeta/login-actions/registration?client_id=apisix&tab_id=gXKk2YPUybg) and fill the form with the data.
 
 
-Once you have registered you will be able to access the platform and start consuming data. Next you will be guided with some instructions to get that purpouse.
+Once you have registered you will be able to access the platform and start producing events to 5GMETA platform. Next you will be guided with some instructions to get that purpouse.
 
 ## Software requirements
 
