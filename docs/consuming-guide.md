@@ -10,7 +10,23 @@
 
 
 # Guide to consuming data
+Before jumping to consuming the available datatypes, it is necessary to understand some concepts in order to use 5GMETA APIs:
+* **Tiles** : 
+  * ***About Geographic Data Tiles*** :
+    Geographic data tiles are a way of organizing and distributing large datasets of geographic information, such as satellite imagery or digital maps. ***Each tile represents a specific geographic area***, and the data within each tile is typically organized into a regular grid or matrix. By dividing data into tiles, it becomes easier to manage and distribute large datasets, as users can selectively download only the tiles they need.
 
+    In this consuming guide file, we provide information about the geographic areas covered by our dataset tiles [Datasets available within tiles](https://github.com/5gmetadmin/5gmeta-dev/blob/main/docs/datasets.md) , along with instructions on how to access and use the data. By using tiles to organize and distribute our data, we aim to make it more accessible and easier to use for a wide range of applications.
+* **Available Datatypes** :
+  * 5GMETA Platform provide wide range of datatypes:
+    * ***C-ITS*** : ***Cooperative Intelligent Transport Systems***
+      * **JSON** Format, **ETSI CAM**  messages also included (ex: GPS position, speed, etc..)
+      * ETSI is the European Telecommunications Standards Institute (Vehicular communication is based on wireless Vehicle-2-Everything (V2X) networks)
+      * ![Example](images/cits-example.png)
+    * ***Images*** :
+      * **JPG** Format
+      * ![Example](images/image-sample-vicomtech-donostia.jpg)
+    * ***Video Streams***
+      * Video Streams are in **H.264** video standard Format (x264 implementation)
 ## Registering into the application
 
 First step to start using 5GMETA platform will be registering on it.
