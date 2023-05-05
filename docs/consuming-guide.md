@@ -27,6 +27,15 @@ Before jumping to consuming the available datatypes, it is necessary to understa
       * ![Example](images/image-sample-vicomtech-donostia.jpg)
     * ***Video Streams***
       * Video Streams are in **H.264** video standard Format (x264 implementation)
+* **Instance Types**:
+  * 5GMETA Platform offers a range of computing resources for users to choose from.
+  * Instance types refer to different configurations of computing resources that are available for users to choose from when setting up their virtual machines or cloud computing instances. In this example, we have four different instance types with varying amounts of CPU, GPU, and memory resources:
+  1. "***small***" instance type: This instance type has 2 CPUs, 2GB of memory, and no GPU.
+  2. "***medium***" instance type: This instance type has 4 CPUs, 4GB of memory, and no GPU.
+  3. "***large***" instance type: This instance type has 8 CPUs, 8GB of memory, and no GPU.
+  4. "***advanced***" instance type: This instance type has 8 CPUs, 8GB of memory, and a GPU.
+  * The instance types are identified by unique type IDs (type_id) and human-readable names (type_name) to make it easier for users to select the type of instance that best suits their needs.
+  * ![Example](images/instancetypes.png)
 ## Registering into the application
 
 First step to start using 5GMETA platform will be registering on it.
