@@ -74,7 +74,21 @@ while True:
     msg_sd = proton.Message()
     proton.Message.decode(msg_sd, raw_sd)
 
-    # The msg_sd.body contains the data of the sendor
+    # The msg_sd.body contains the data of the sender
+    ## PROCESS DATA
+    ## PUT HERE YOUR CODE TO PROCESS DATA FROM THE INCOMING MESSAGE
+    ## PUT HERE YOUR CODE TO PROCESS DATA FROM THE INCOMING MESSAGE
+    ## PUT HERE YOUR CODE TO PROCESS DATA FROM THE INCOMING MESSAGE
+    ## PUT HERE YOUR CODE TO PROCESS DATA FROM THE INCOMING MESSAGE
+
+
+    ## OUTPUT DATA
+    ## PUT HERE YOUR CODE TO OUTPUT PROCESSED DATA FROM THE INCOMING MESSAGE
+    ## PUT HERE YOUR CODE TO OUTPUT PROCESSED DATA FROM THE INCOMING MESSAGE
+    ## PUT HERE YOUR CODE TO OUTPUT PROCESSED DATA FROM THE INCOMING MESSAGE
+    ## PUT HERE YOUR CODE TO OUTPUT PROCESSED DATA FROM THE INCOMING MESSAGE
+    
+    
     #print("Size " + str(sys.getsizeof(msg_sd.body)))
 
     outfile = open("output/body_"+str(i)+".jpg", 'wb')

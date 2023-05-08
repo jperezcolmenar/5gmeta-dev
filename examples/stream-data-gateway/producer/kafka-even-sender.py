@@ -15,7 +15,7 @@ def main():
     if len(sys.argv) != 2:
         print("Usage: python3 kafka_event_sender.py message")
         exit()
-
+    # Add any message you like from terminal | Or Define the message according to your data
     message = str(sys.argv[1])
 
     schema_str = """
