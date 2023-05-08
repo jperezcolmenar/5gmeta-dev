@@ -14,7 +14,7 @@ Before jumping to consuming the available datatypes, it is necessary to understa
 
 -  **Tiles** : 
   -  ***About Geographic Data Tiles*** :
-    Geographic data tiles are a way of organizing and distributing large datasets of geographic information, such as satellite imagery or digital maps. ***Each tile represents a specific geographic area***, and the data within each tile is typically organized into a regular grid or matrix. By dividing data into tiles, it becomes easier to manage and distribute large datasets, as users can selectively download only the tiles they need.
+    Geographic data tiles are a way of organizing and distributing large datasets of geographic information, such as satellite imagery or digital maps. **Each tile represents a specific geographic area**, and the data within each tile is typically organized into a regular grid or matrix. By dividing data into tiles, it becomes easier to manage and distribute large datasets, as users can selectively download only the tiles they need.
 
   - In this consuming guide file, we provide information about the geographic areas covered by our dataset tiles [Datasets available within tiles](https://github.com/5gmetadmin/5gmeta-dev/blob/main/docs/datasets.md) , along with instructions on how to access and use the data. By using tiles to organize and distribute our data, we aim to make it more accessible and easier to use for a wide range of applications.
 -  **Available Datatypes** :
