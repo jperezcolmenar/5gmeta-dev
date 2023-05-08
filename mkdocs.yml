@@ -1,13 +1,14 @@
 site_name: 5GMETA
 nav:
     - Home: index.md
-    - Message Data Broker: message-databroker.md
-    - Data Producers (ActiveMQ): activemq-example.md
-    - Stream Data Gateway: stream-datagateway.md
-    - Stream Data Gateway Examples: stream-example.md
-    - Avro Events Producer Example: stream-avro-producer.md
+    - Consuming Guide: consuming-guide.md
+    - Producing Events Guide: producing_events_guide.md
+    - Dataset Guide: datasets.md
+    - Advanced Concepts:
+        - Message Data Broker: message-databroker.md
+        - Stream Data Gateway: stream-datagateway.md
+        - Stream Data Gateway Examples: stream-example.md
+        - Avro Events Producer Example: stream-avro-producer.md
+    - FAQ: FAQ.md
     - About: about.md
-    - Consuming guide: consuming-guide.md
-    - Producing events guide: producing_events_guide.md
-    - Dataset guide: datasets.md
 theme: readthedocs
