@@ -38,6 +38,9 @@ Also install with pip3:
 * kafka-python
 * numpy
 * python-qpid-proton
+* requests
+* confluent-kafka
+* avro
 
 ## Platform-client helper application
 
