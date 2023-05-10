@@ -53,7 +53,7 @@ Thus, as a user, you might intend to interetact with the data platform have been
 
 First step to start using 5GMETA platform will be registering on it.
 
-Please go to [Registration web page](https://5gmeta-platform.eu/identity/realms/5gmeta/login-actions/registration?client_id=apisix&tab_id=gXKk2YPUybg) and fill the form with the data.
+Please go to [Registration web page](https://5gmeta-platform.eu/identity/realms/5gmeta/protocol/openid-connect/auth?client_id=account-console&redirect_uri=https%3A%2F%2F5gmeta-platform.eu%2Fidentity%2Frealms%2F5gmeta%2Faccount%2F%23%2F&state=e663b644-ad9e-4099-8ef5-a01f0b96113b&response_mode=fragment&response_type=code&scope=openid&nonce=8fe4af95-2960-4091-8291-f0b938ecb71b&code_challenge=q1YJn1i-HV4Bk695CxlzYXIrLedunlS7TBafxCULGCQ&code_challenge_method=S256) and fill the form with the data.
 
 
 Once you have registered you will be able to access the platform and start consuming data. Next you will be guided with some instructions to get that purpouse.
