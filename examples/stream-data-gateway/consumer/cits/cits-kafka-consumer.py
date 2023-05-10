@@ -48,9 +48,9 @@ def consume_messages(consumer):
 
 if __name__ == '__main__':
     # Configuration
-    tile = "120223111322010231"
-    instance_type = "medium" #small
-    platform_address = "15.236.104.255"
+    tile = "0313331232"
+    instance_type = "small"
+    platform_address = "13.39.20.247"
     bootstrap_port = "31090"
     registry_port = "31081"
     platform_user = "5gmeta"
