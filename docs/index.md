@@ -21,6 +21,6 @@ Streaming mode means that the 5GMETA platform doesn’t store data.
 In the next topics we will cover the following topics:
 
 * Getting started
-* Integrating a CAM application
-* Advanced concepts
-* Additional support material
+* Consuming Guide
+* Dataset Guide
+* Producing Events Guide
