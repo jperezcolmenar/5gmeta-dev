@@ -1,14 +1,3 @@
-5GMETA platform is an IoT oriented platform that produces data from vehicles to be consumed by third party applications in order to get data from several types:
-
-* CITS
-    * json like messages with data extracted from the vehicle (ex: GPS position, etc)
-    * [Example](https://github.com/5gmetadmin/5gmeta-dev/tree/main/tools/cits-example.json)
-* images
-    * jpg
-* Video streaming
-
-This is a guide publish or broadcast events to 5GMETA Platform
-
 # Guide to produce an event
 
 ## Registering into the application
@@ -56,15 +45,16 @@ in your command line.
 
 ### Client usage
 Once you have executed the previous command you will be prompted for:
-* 5GMETA username
-* 5GMETA password
-* Produce or Consume
-* Tile
+
+- 5GMETA username
+- 5GMETA password
+- Produce or Consume
+- Tile
 
 
 After entering your username/password, client will ask you if you want to:
-* Consume data from 5GMETA platform
-* Produce an event in a vehicle connected to 5GMETA platform
+- Consume data from 5GMETA platform
+- Produce an event in a vehicle connected to 5GMETA platform
 
 
 

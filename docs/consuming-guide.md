@@ -68,6 +68,11 @@ Also install with pip3:
 * confluent-kafka
 * avro
 
+Also find easy installation for all the required packages(Be careful of your environment compatibility):
+
+* ```pip3 install -r examples/requirements.txt```
+
+
 ## Platform-client helper application
 
 There is a guided applicaction that will help you to get the apropriate parameters from 5GMETA platform to get the data you need.
@@ -151,17 +156,21 @@ This client is a Kafka client that will consume CITS data from 5GMETA platform a
 * Kafka bootstrap port
 * Kafka schema registry port
 
+#### Consumer instructions
 
+- Select the suitable consumer as per the produced data and use as follows: 
+```
+python3 cits-consumer.py topic platformaddress bootstrap_port registry_port
 
-# Glossary
+``` 
+or
+```
+python3 image-consumer.py topic platformaddress bootstrap_port registry_port
 
-## Tile
+``` 
+or
 
-A tile is a square area in the Earth surface defined to define some surface
+```
+python3 video-consumer.py platformaddress bootstrap_port topic dataflow_id
 
-*[Tile example location for tile 03133312320110220](https://ecn.t0.tiles.virtualearth.net/tiles/r03133312320110220?g=914&mkt=en-us&lbl=l1&stl=h&shading=hill&n=z)
-
-## Datatype
-
-## Instancetype
-
+```
