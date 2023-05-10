@@ -69,7 +69,7 @@ Also install with pip3:
 * confluent-kafka
 * avro
 
-Also find easy installation for all the required packages(Be careful of your environment compatibility):
+Note : Be careful of your environment compatibility:
 
 * ```pip3 install -r examples/requirements.txt```
 
