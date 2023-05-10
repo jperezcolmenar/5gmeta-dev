@@ -37,48 +37,13 @@ Before jumping to consuming the available datatypes, it is necessary to understa
   4. "***advanced***" instance type: This instance type has 8 CPUs, 8GB of memory, and a GPU.
   -  The instance types are identified by unique type IDs (type_id) and human-readable names (type_name) to make it easier for users to select the type of instance that best suits their needs.
   -  ![Example](images/instancetypes.png)
-## Registering into the application
-
-First step to start using 5GMETA platform will be registering on it.
-
-Please go to [Registration web page](https://5gmeta-platform.eu/identity/realms/5gmeta/login-actions/registration?client_id=apisix&tab_id=gXKk2YPUybg) and fill the form with the data.
-
-
-Once you have registered you will be able to access the platform and start consuming data. Next you will be guided with some instructions to get that purpouse.
-
-## Software requirements
-
-This guide is oriented to be executed in an Ubuntu 20.04 environment.
-
-## Extra packages to be installed
-First of all, you will need to install some dependencies (apt-get):
-
-* python3-avro
-* python3-confluent-kafka
-* gstreamer1.0-plugins-bad (only if you are going to consume video)
-* gstreamer1.0-libav (only if you are going to consume video)
-* python3-gst-1.0 (only if you are going to consume video)
-
-Also install with pip3:
-
-* kafka-python
-* numpy
-* python-qpid-proton
-* requests
-* confluent-kafka
-* avro
-
-Also find easy installation for all the required packages(Be careful of your environment compatibility):
-
-* ```pip3 install -r examples/requirements.txt```
-
 
 ## Platform-client helper application
 
 There is a guided applicaction that will help you to get the apropriate parameters from 5GMETA platform to get the data you need.
 You can execute it by downloading all content from folder: 
 
-* [Platform cliente helper application](https://github.com/5gmetadmin/5gmeta-dev/tree/main/utils/platform-client/)
+* [Platform client helper application](https://github.com/5gmetadmin/5gmeta-dev/tree/main/utils/platform-client/)
 
 Once you have donwload that software you can run it by executing:
 ```
