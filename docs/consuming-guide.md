@@ -58,6 +58,7 @@ First of all, you will need to install some dependencies (apt-get):
 * gstreamer1.0-plugins-bad (only if you are going to consume video)
 * gstreamer1.0-libav (only if you are going to consume video)
 * python3-gst-1.0 (only if you are going to consume video)
+* ```sudo apt-get install python3-avro python3-confluent-kafka gstreamer1.0-plugins-bad gstreamer1.0-libav python3-gst-1.0```
 
 Also install with pip3:
 
