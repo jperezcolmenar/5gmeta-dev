@@ -37,6 +37,7 @@ Before jumping to consuming the available datatypes, it is necessary to understa
   4. "***advanced***" instance type: This instance type has 8 CPUs, 8GB of memory, and a GPU.
   -  The instance types are identified by unique type IDs (type_id) and human-readable names (type_name) to make it easier for users to select the type of instance that best suits their needs.
   -  ![Example](images/instancetypes.png)
+
 ## Registering into the application
 
 First step to start using 5GMETA platform will be registering on it.
@@ -79,7 +80,7 @@ Note : Be careful of your environment compatibility:
 There is a guided applicaction that will help you to get the apropriate parameters from 5GMETA platform to get the data you need.
 You can execute it by downloading all content from folder: 
 
-* [Platform cliente helper application](https://github.com/5gmetadmin/5gmeta-dev/tree/main/utils/platform-client/)
+* [Platform client helper application](https://github.com/5gmetadmin/5gmeta-dev/tree/main/utils/platform-client/)
 
 Once you have donwload that software you can run it by executing:
 ```
