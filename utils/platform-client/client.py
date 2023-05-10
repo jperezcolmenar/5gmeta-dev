@@ -25,7 +25,7 @@ if __name__ == "__main__":
     disable_instanceapi = opts.disable_instanceapi
     # disable_instanceapi = False
 
-    broker_address = "13.38.49.250" 
+    broker_address = "13.39.20.247" 
     bootstrap_port = "31090"
     registry_port =  "31081"
 
