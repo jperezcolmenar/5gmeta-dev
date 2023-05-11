@@ -29,6 +29,9 @@ Also install with pip3:
 * kafka-python
 * numpy
 * python-qpid-proton
+* requests
+* confluent-kafka
+* avro
 
 Also find easy installation for all the required packages(Be careful of your environment compatibility):
 
