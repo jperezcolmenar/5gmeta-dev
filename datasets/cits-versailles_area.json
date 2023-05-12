@@ -1,0 +1,83 @@
+body = '{
+    "header": {
+        "protocolVersion": 2,
+        "messageID": 2, // CAM
+        "stationID": vehX
+    },
+    "cam": {
+        "generationDeltaTime": step, # current time
+        "camParameters": {
+            "basicContainer": {
+                "stationType": 5, # 5 = vehicule
+                "referencePosition": {
+                    "latitude": 435549160,
+                    "longitude": 103036950
+                }
+            },
+            "highFrequencyContainer": {
+                "basicVehicleContainerHighFrequency": {
+                    "heading": {
+                        "headingValue": 1340
+                    },
+                    "speed": {
+                        "speedValue": 618
+                    },
+                    "vehicleLength": {
+                        "vehicleLengthValue": 42,
+                        "vehicleLengthConfidenceIndication": "unavailable"
+                    },
+                    "vehicleWidth": 20,
+                    "longitudinalAcceleration": {
+                        "longitudinalAccelerationValue": 161,
+                        "longitudinalAccelerationConfidence": 102
+                    },
+                    "accelerationControl": "00",
+                    "lanePosition": -1
+                }
+            }
+        }
+    }
+}'
+
+// Traffic light. SPAT
+body = '{
+    "header": {
+        "protocolVersion": 2,
+        "messageID": 2,
+        "stationID": traffic_id
+    },
+    "spat": {
+        "timestamp": step, # current time
+        "intersections": {
+            "id": traffic_id,
+            ["state":
+            {
+                "sub_id": 0,
+                "state":1
+            },
+            "state":
+            {
+                "sub_id": 1,
+                "state":2
+            }],
+        }
+    }
+}'
+
+// Parking area
+body = '{
+    "header": {
+        "protocolVersion": 2,
+        "messageID": 2,
+        "stationID": parking_id
+    },
+    "spat": {
+        "timestamp": step, # current time
+        "parking": 
+        {
+            "id": parking_id,
+            "capacity": 60,
+            "occupancy": 5
+        }
+    }
+}'
