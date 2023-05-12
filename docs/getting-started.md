@@ -30,10 +30,13 @@ Also install with pip3:
 * numpy
 * python-qpid-proton
 * requests
-* confluent-kafka
+* confluent-kafka (at least version 2.0.2)
 * avro
+* avro-python3
+* fastavro
+* avro_to_python
 
 Also find easy installation for all the required packages(Be careful of your environment compatibility):
 
-* ```pip3 install -r examples/requirements.txt```
+* ```pip3 install -r examples/stream-data-gateway/requirements.txt```
 

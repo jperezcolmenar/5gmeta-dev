@@ -3,9 +3,11 @@ This is a Producer of events to be broadcasted to 5GMETA Platform
 
 # Required Packages
 Install these packages using ***pip*** package manager
-- ```pip install confluent-kafka```
+- ```pip install confluent-kafka==2.0.2```
 - ```pip install avro```
 - ```pip install avro-python3```
+- ```pip install fastavro```
+- ```pip install avro_to_python```
 
 # Usage
 The following examples must be used in combination of [platform-client](https://github.com/5gmetadmin/stream-data-gateway/tree/main/utils/platform-client) that returns apropriate topic and ip and ports to be run.
