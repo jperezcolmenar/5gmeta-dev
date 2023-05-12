@@ -1,14 +1,15 @@
-body = '{
+// CAM
+{
     "header": {
         "protocolVersion": 2,
-        "messageID": 2, // CAM
-        "stationID": vehX
+        "messageID": 2,
+        "stationID": 10
     },
     "cam": {
-        "generationDeltaTime": step, # current time
+        "generationDeltaTime": 1,
         "camParameters": {
             "basicContainer": {
-                "stationType": 5, # 5 = vehicule
+                "stationType": 5,
                 "referencePosition": {
                     "latitude": 435549160,
                     "longitude": 103036950
@@ -37,19 +38,19 @@ body = '{
             }
         }
     }
-}'
+}
 
-// Traffic light. SPAT
-body = '{
+// SPAT (Traffic light)
+{
     "header": {
         "protocolVersion": 2,
         "messageID": 2,
-        "stationID": traffic_id
+        "stationID": 101
     },
     "spat": {
-        "timestamp": step, # current time
+        "timestamp": 10,
         "intersections": {
-            "id": traffic_id,
+            "id": 101,
             ["state":
             {
                 "sub_id": 0,
@@ -62,22 +63,22 @@ body = '{
             }],
         }
     }
-}'
+}
 
 // Parking area
-body = '{
+{
     "header": {
         "protocolVersion": 2,
         "messageID": 2,
-        "stationID": parking_id
+        "stationID": 202
     },
     "spat": {
-        "timestamp": step, # current time
+        "timestamp": 10,
         "parking": 
         {
-            "id": parking_id,
+            "id": 202,
             "capacity": 60,
             "occupancy": 5
         }
     }
-}'
+}
