@@ -4,5 +4,6 @@ nav:
     - Consuming Guide: consuming-guide.md
     - Dataset Guide: datasets.md
     - Producing Events Guide: producing_events_guide.md
+    - Data Processing Tutorials: tutorial-processing.md
     - About: about.md
 theme: readthedocs
