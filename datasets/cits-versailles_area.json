@@ -42,43 +42,39 @@
 
 // SPAT (Traffic light)
 {
-    "header": {
-        "protocolVersion": 2,
-        "messageID": 2,
-        "stationID": 101
-    },
-    "spat": {
-        "timestamp": 10,
-        "intersections": {
-            "id": 101,
-            ["state":
-            {
-                "sub_id": 0,
-                "state":1
-            },
-            "state":
-            {
-                "sub_id": 1,
-                "state":2
-            }],
-        }
-    }
+	"header": {
+		"protocolVersion": 2,
+		"messageID": 15,
+		"stationID": 101
+	},
+	"spat": {
+		"timestamp": 10,
+		"intersections": [{
+			"id": 101,
+			"states": [{
+				"sub_id": 0,
+				"state": 1
+			}, {
+				"sub_id": 1,
+				"state": 2
+			}]
+		}]
+	}
 }
 
 // Parking area
 {
-    "header": {
-        "protocolVersion": 2,
-        "messageID": 2,
-        "stationID": 202
-    },
-    "spat": {
-        "timestamp": 10,
-        "parking": 
-        {
-            "id": 202,
-            "capacity": 60,
-            "occupancy": 5
-        }
-    }
+	"header": {
+		"protocolVersion": 2,
+		"messageID": 16,
+		"stationID": 202
+	},
+	"pam": {
+		"timestamp": 10,
+		"parking": {
+			"id": 202,
+			"capacity": 60,
+			"occupancy": 5
+		}
+	}
 }
