@@ -161,6 +161,15 @@ This client is a Kafka client that will consume CITS data from 5GMETA platform a
 * Kafka bootstrap port
 * Kafka schema registry port
 
+### IMAGE consumer
+
+This client is a Kafka client that will consume images data from 5GMETA platform and will print on the command line output. It takes as input parameters:
+
+* Kafka topic
+* Kafka broker address
+* Kafka bootstrap port
+* Kafka schema registry port
+
 #### Consumer instructions
 
 - Select the suitable consumer as per the produced data and use as follows: 
@@ -170,6 +179,7 @@ python3 cits-consumer.py topic platformaddress bootstrap_port registry_port
 ``` 
 or
 ```
+mkdir output
 python3 image-consumer.py topic platformaddress bootstrap_port registry_port
 
 ``` 
