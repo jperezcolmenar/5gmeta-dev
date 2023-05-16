@@ -56,5 +56,17 @@ def get_properties(auth_header, datatype):
 #        print(f"{err}")
         sys.exit("Error requesting datatype properties. Try again.")
 
+def get_id_properties(auth_header, id):
+    try:
+        r = requests.get(url + "/dataflows/" + id , headers=auth_header)
+        r.raise_for_status()
+        properties = r.json()
+        
+        return properties
+    except Exception as err:
+#        print(f"{err}")
+        sys.exit("Error requesting id properties. Try again.")
+
+
 def delete_topic(auth_header, topic):
     requests.delete(url + "/topics/" + topic, headers=auth_header)

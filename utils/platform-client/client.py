@@ -136,13 +136,21 @@ if __name__ == "__main__":
                     else:
                         instance_type = "small"
 
-            #        print(f"You have the following subdatatypes in tile {tile}: ")
-            #        datatype_properties = dataflow.get_properties(auth_header, datatype)
-            #        avalaible_subdatatypes = datatype_properties['dataSubType']
-            #        print(f"{avalaible_subdatatypes}")
-            #        print(f"\nPlease enter the subdatatype of {datatype} datatype you want to consume: ")
-            #        subdatatype = input("Subdatatype: ")
-            #        filters = subdatatype
+                    print(f"You have the following subdatatypes in tile {tile}: ")
+                    ids = dataflow.get_ids(auth_header, tile, datatype, filters)
+                    avalaible_subdatatypes = set()
+                    for id in ids:
+                        id_props = dataflow.get_id_properties(auth_header,str(id))
+                        avalaible_subdatatypes.add(id_props['dataTypeInfo']['dataSubType'])
+                    avalaible_subdatatypes = list(avalaible_subdatatypes)
+                    print(f"{avalaible_subdatatypes}")
+                    print(f"\nPlease enter the subdatatype of {datatype} datatype you want to consume [q or Q to not select]: ")
+                    subdatatype = input("Subdatatype: ")
+                    filters = ""
+                    if subdatatype == 'q' or subdatatype == 'Q':
+                        filters = ""
+                    else: 
+                        filters = "&dataSubType="+subdatatype
                     topic = dataflow.request_topic(auth_header, tile, datatype, instance_type, filters)
                     topics.append(topic)
 
