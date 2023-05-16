@@ -10,6 +10,8 @@
 
 
 # Guide to consuming data
+Refer to this public [repo](https://github.com/5gmetadmin/5gmeta-dev) to consume data.
+
 Before jumping to consuming the available datatypes, it is necessary to understand some concepts in order to use 5GMETA APIs:
 
 -  **Tiles** : 
@@ -72,7 +74,8 @@ Also install with pip3:
 
 Note : Be careful of your environment compatibility:
 
-* ```pip3 install -r examples/requirements.txt```
+* ```pip3 install -r examples/stream-data-gateway/requirements.txt```
+* Link for [examples/stream-data-gateway/requirements.txt](https://github.com/5gmetadmin/5gmeta-dev/blob/main/examples/stream-data-gateway/requirements.txt)
 
 
 ## Platform-client helper application
@@ -80,7 +83,7 @@ Note : Be careful of your environment compatibility:
 There is a guided applicaction that will help you to get the apropriate parameters from 5GMETA platform to get the data you need.
 You can execute it by downloading all content from folder: 
 
-* [Platform client helper application](https://github.com/5gmetadmin/5gmeta-dev/tree/main/utils/platform-client/)
+* [Platform client helper application](https://github.com/5gmetadmin/5gmeta-dev/tree/main/utils/platform-client/client.py)
 
 Once you have donwload that software you can run it by executing:
 ```
