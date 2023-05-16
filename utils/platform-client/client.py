@@ -136,17 +136,13 @@ if __name__ == "__main__":
                     else:
                         instance_type = "small"
 
-                    print(f"You have the following subdatatypes in tile {tile}: ")
-                    datatype_properties = dataflow.get_properties(auth_header, datatype)
-                    avalaible_subdatatypes = datatype_properties['dataSubType']
-                    print(f"{avalaible_subdatatypes}")
-                    print(f"\nPlease enter the subdatatype of {datatype} datatype you want to consume [q or Q to not select]: ")
-                    subdatatype = input("Subdatatype: ")
-                    filters = ""
-                    if subdatatype == 'q' or subdatatype == 'Q':
-                        filters = ""
-                    else: 
-                        filters = "&dataSubType="+subdatatype
+            #        print(f"You have the following subdatatypes in tile {tile}: ")
+            #        datatype_properties = dataflow.get_properties(auth_header, datatype)
+            #        avalaible_subdatatypes = datatype_properties['dataSubType']
+            #        print(f"{avalaible_subdatatypes}")
+            #        print(f"\nPlease enter the subdatatype of {datatype} datatype you want to consume: ")
+            #        subdatatype = input("Subdatatype: ")
+            #        filters = subdatatype
                     topic = dataflow.request_topic(auth_header, tile, datatype, instance_type, filters)
                     topics.append(topic)
 
@@ -185,4 +181,14 @@ if __name__ == "__main__":
     else:
         sys.exit("You did not request any data. Thank you for using 5GMETA Platform. Bye!")
 
-    
+    #while True:
+    #    try:
+    #        pass
+    #    except KeyboardInterrupt:
+    #        print(f"\nExiting...")
+    #        for mec_id in instance_ids.keys():
+    #            for instance_id in instance_ids[mec_id]:
+    #                cloudinstance.delete_instance(auth_header, mec_id, instance_id)
+    #        for topic in topics:
+    #            dataflow.delete_topic(auth_header, topic)
+    #        sys.exit("\nThank you for using 5GMETA Platform. Bye!")
