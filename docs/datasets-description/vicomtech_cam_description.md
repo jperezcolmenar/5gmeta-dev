@@ -2,13 +2,13 @@ CAM Messages of a simulation with maximun of 50 cars at a time.
 
 The CAM dataset contains messages with information captured by Cooperative Awareness Messages (CAM).
 Relevant information in each message is:
-StationID
-generationDeltaTime
-latitude
-longitude
-heading
-acceleration
-spped
+StationID,
+generationDeltaTime,
+latitude,
+longitude,
+heading,
+acceleration,
+speed
 
 
 Header
@@ -19,7 +19,8 @@ Header
 
 CAM
 
-    generationDeltaTime: Time since last CAM message
+    generationDeltaTime: enerationDeltaTime = TimestampIts mod 65 536
+    TimestampIts represents an integer value in milliseconds since 2004-01-01T00:00:00:000Z 
 
 basicContainer
 
